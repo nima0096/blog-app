@@ -1,12 +1,22 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  BlogPage,
+  BlogsPage,
+  ContactUsPage,
+  HomePage,
+  NotFoundPage,
+} from "./pages ";
+
 export const App = () => {
-  return;
-  <browserRouter>
-    <Routes>
-      <Route path="/" element={<div>Home page</div>} />
-      <Route path="/blogs" element={<div>All blogs page</div>} />
-      <Route path="/blogs/:id" element={<div>Single Blog Pages</div>} />
-      <Route path="/contact us" element={<div>Contact Us</div>} />
-      <Route path="/404" element={<div>Not fount fage</div>} />
-    </Routes>
-  </browserRouter>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blogs" element={<BlogsPage />} />
+        <Route path="/blogs/:id" element={<BlogPage />} />
+        <Route path="/contact-us" element={<ContactUsPage />} />
+        <Route path="/404" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
