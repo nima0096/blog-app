@@ -5,7 +5,9 @@ import {
   ContactUsPage,
   HomePage,
   NotFoundPage,
-} from "./pages ";
+  SignInPage,
+  SignUpPage,
+} from "./pages";
 
 export const App = () => {
   return (
@@ -17,6 +19,8 @@ export const App = () => {
         <Route path="/contact-us" element={<ContactUsPage />} />
         <Route path="/404" element={<NotFoundPage />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/sign-in" element={<SignInPage />} />
+        <Route path="/sign-up" element={<SignUpPage />} />
       </Routes>
     </BrowserRouter>
   );
