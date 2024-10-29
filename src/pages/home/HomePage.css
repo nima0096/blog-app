@@ -1,0 +1,29 @@
+#home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+  min-width: 800px;
+  height: 500px;
+}
+#home-page-image {
+  width: 1216px;
+  height: 600px;
+}
+#trending-container {
+  display: flex;
+  justify-content: center;
+  width: Hug (1, 232px) px;
+  height: Hug (320px) px;
+  gap: 20px;
+  opacity: 0px;
+}
+#trending-container img {
+  width: 289px;
+  height: 320px;
+  margin-top: 30px;
+}
+h1 {
+  margin-top: 50px;
+}

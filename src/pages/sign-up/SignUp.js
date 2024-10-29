@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, TextField } from "../../components";
+import { signUpFunction } from "../../firebase";
 
 export const SignUpPage = () => {
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: "",
@@ -18,7 +20,7 @@ export const SignUpPage = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (
@@ -27,8 +29,23 @@ export const SignUpPage = () => {
       formData.email &&
       formData.password
     ) {
-      alert("Sign Up Successful");
-      navigate("/");
+      try {
+        await signUpFunction(
+          formData.firstName,
+          formData.lastName,
+          formData.email,
+          formData.password
+        );
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          password: "",
+        });
+        navigate("/");
+      } catch (error) {
+        setError(error.message);
+      }
     } else {
       alert("Please enter all fields");
     }
@@ -77,6 +94,8 @@ export const SignUpPage = () => {
         >
           Already have an account?
         </Link>
+
+        {error && <p style={{ color: "red", fontSize: "12px" }}> {error}</p>}
       </form>
     </div>
   );

@@ -51,7 +51,6 @@ p {
   flex-direction: column;
   gap: 10px;
 }
-
 #contact-form {
   width: 544px;
   padding: 40px;
@@ -72,4 +71,14 @@ textarea {
   border-radius: 8px;
   padding: 10px;
   border: 1px solid #ccc;
+}
+#send-message-button {
+  width: 130px;
+  height: 40px;
+  background-color: #4b6bfb;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 16px;
+  color: white;
+  font-size: 14px;
 }

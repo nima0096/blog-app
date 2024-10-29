@@ -52,6 +52,7 @@ export const ContactUsPage = () => {
           <TextField placeholder="Subject" />
 
           <textarea placeholder="Write a message" rows="6" />
+          <button id="send-message-button">Send message</button>
         </div>
       </div>
 
