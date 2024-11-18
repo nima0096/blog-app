@@ -6,6 +6,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
+import { collection, doc, getFirestore, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -19,12 +20,29 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 
-export const signUpFunction = (firstName, lastName, email, password) => {
-  return createUserWithEmailAndPassword(auth, email, password).then(() => {
-    return updateProfile(auth.currentUser, {
+export const signUpFunction = async (firstName, lastName, email, password) => {
+  try {
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    console.log(userCredential);
+    const user = userCredential.user;
+
+    await updateProfile(user, {
       displayName: `${firstName} ${lastName}`,
     });
-  });
+
+    await setDoc(doc(usersCollection, user.uid), {
+      displayName: user.displayName,
+      email: user.email,
+      phoneNumber: user.phoneNumber || "",
+      photoUrl: user.photoUrl || "",
+    });
+  } catch (error) {
+    console.error("Error signing up:", error);
+  }
 };
 
 export const signInFunction = (email, password) => {
@@ -34,3 +52,9 @@ export const signInFunction = (email, password) => {
 export const signOutFunction = () => {
   return signOut(auth);
 };
+
+export const database = getFirestore(app);
+export const usersCollection = collection(database, "users");
+export const contactsCollection = collection(database, "contacts");
+export const blogsCollection = collection(database, "blogs");
+export const tagsCollection = collection(database, "tags");

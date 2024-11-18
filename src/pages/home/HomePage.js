@@ -38,7 +38,7 @@ export const HomePage = () => {
         <img src="images/womanpic.png" alt="womanpic" />
         <img src="images/Rectangle.png" alt="womanpic" />
       </div>
-      <div>hello</div>
+      <div>All Blog Post</div>
 
       <div id="home-container">
         {currentUser ? (

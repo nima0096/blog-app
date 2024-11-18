@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./SignIn.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, TextField } from "../../components";
+import { signInFunction } from "../../firebase";
 
 export const SignInPage = () => {
   const navigate = useNavigate();
@@ -16,12 +17,20 @@ export const SignInPage = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (formData.email && formData.password) {
-      alert("Sign in successful");
-      navigate("/");
+      try {
+        await signInFunction(formData.email, formData.password);
+        setFormData({
+          email: "",
+          password: "",
+        });
+        navigate("/");
+      } catch (error) {
+        console.log(error);
+      }
     } else {
       alert("Please enter all fields");
     }

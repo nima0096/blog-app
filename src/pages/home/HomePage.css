@@ -7,6 +7,10 @@
   min-width: 800px;
   height: 500px;
 }
+#home-container img {
+  width: 1216px;
+  height: 600px;
+}
 #home-page-image {
   width: 1216px;
   height: 600px;
