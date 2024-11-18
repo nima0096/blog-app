@@ -33,6 +33,7 @@ export const BlogsPage = () => {
       </div>
       <CreateBlogModal open={openBlog} handleClose={handleCloseBlog} />
       <CreateTagModal open={openTag} handleClose={handleCloseTag} />
+      {/* <Footer /> */}
     </div>
   );
 };
