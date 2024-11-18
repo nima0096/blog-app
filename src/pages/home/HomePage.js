@@ -38,7 +38,108 @@ export const HomePage = () => {
         <img src="images/womanpic.png" alt="womanpic" />
         <img src="images/Rectangle.png" alt="womanpic" />
       </div>
-      <div>All Blog Post</div>
+
+      <h2>All Blog Post</h2>
+      <div id="blog-post-container">
+        {/* <p style={{color:'blue';
+}}>All</p> */}
+        <p>Design</p>
+        <p>Travel</p>
+        <p>Fashion</p>
+        <p>Technology</p>
+        <p>Branding</p>
+      </div>
+      <div className="pic-container">
+        <div>
+          <img src="images/pic1.png" alt="womanpic" />
+          <p>Technology</p>
+          <h2>
+            The Impact of Technology on the Workplace: How Technology is
+            Changing
+          </h2>
+          <a>August 20, 2022</a>
+        </div>
+        <div>
+          <img src="images/pic2.png" alt="womanpic" />
+          <p>Design</p>
+          <h2>
+            The Impact of Technology on the Workplace: How Technology is
+            Changing
+          </h2>
+          <a>August 20, 2022</a>
+        </div>
+        <div>
+          <img src="images/pic3.png" alt="womanpic" />
+          <p>Technology</p>
+          <h2>
+            The Impact of Technology on the Workplace: How Technology is
+            Changing
+          </h2>
+          <a>August 20, 2022</a>
+        </div>
+      </div>
+
+      <div className="pic-container">
+        <div>
+          <img src="images/pic4.png" alt="womanpic" />
+          <p>Technology</p>
+          <h2>
+            The Impact of Technology on the Workplace: How Technology is
+            Changing
+          </h2>
+          <a>August 20, 2022</a>
+        </div>
+        <div>
+          <img src="images/pic5.png" alt="womanpic" />
+          <p>Software</p>
+          <h2>
+            The Impact of Technology on the Workplace: How Technology is
+            Changing
+          </h2>
+          <a>August 20, 2022</a>
+        </div>
+        <div>
+          <img src="images/pic6.png" alt="womanpic" />
+          <p>Technology</p>
+          <h2>
+            The Impact of Technology on the Workplace: How Technology is
+            Changing
+          </h2>
+          <a>August 20, 2022</a>
+        </div>
+      </div>
+      <div className="pic-container">
+        <div>
+          <img src="images/pic7.png" alt="womanpic" />
+          <p>Technology</p>
+          <h2>
+            The Impact of Technology on the Workplace: How Technology is
+            Changing
+          </h2>
+          <a>August 20, 2022</a>
+        </div>
+        <div>
+          <img src="images/pic8.png" alt="womanpic" />
+          <p>Technology</p>
+          <h2>
+            The Impact of Technology on the Workplace: How Technology is
+            Changing
+          </h2>
+          <a>August 20, 2022</a>
+        </div>
+        <div>
+          <img src="images/pic9.png" alt="womanpic" />
+          <p>Technology</p>
+          <h2>
+            The Impact of Technology on the Workplace: How Technology is
+            Changing
+          </h2>
+          <a>August 20, 2022</a>
+        </div>
+      </div>
+      <div id="load-container">
+        <button>Load more</button>
+      </div>
 
       <div id="home-container">
         {currentUser ? (
