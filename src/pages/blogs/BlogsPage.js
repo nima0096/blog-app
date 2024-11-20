@@ -4,6 +4,7 @@ import {
   CreateBlogModal,
   CreateTagModal,
   Header,
+  Footer,
 } from "../../components";
 import "./BlogsPage.css";
 
@@ -30,10 +31,11 @@ export const BlogsPage = () => {
             Create Blog
           </Button>
         </div>
+        <Footer />
       </div>
+
       <CreateBlogModal open={openBlog} handleClose={handleCloseBlog} />
       <CreateTagModal open={openTag} handleClose={handleCloseTag} />
-      {/* <Footer /> */}
     </div>
   );
 };

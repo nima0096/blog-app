@@ -51,7 +51,7 @@ export const HomePage = () => {
       </div>
       <div className="pic-container">
         <div>
-          <img src="images/pic1.png" alt="womanpic" />
+          <img src="images/pic-1.png" alt="womanpic" />
           <p>Technology</p>
           <h2>
             The Impact of Technology on the Workplace: How Technology is
