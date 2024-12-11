@@ -5,6 +5,7 @@ import { Button, TextField } from "../../components";
 import { signInFunction } from "../../firebase";
 
 export const SignInPage = () => {
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
@@ -29,7 +30,7 @@ export const SignInPage = () => {
         });
         navigate("/");
       } catch (error) {
-        console.log(error);
+        setError(error.message);
       }
     } else {
       alert("Please enter all fields");
@@ -65,6 +66,8 @@ export const SignInPage = () => {
         >
           Do not have an account?
         </Link>
+
+        {error && <p style={{ color: "red", fontSize: "12px" }}> {error}</p>}
       </form>
     </div>
   );

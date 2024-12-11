@@ -2,15 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { App } from "./App";
-import { UserContextProvider, TagContextProvider } from "./context";
+import {
+  UserContextProvider,
+  TagContextProvider,
+  BlogContextProvider,
+} from "./context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <UserContextProvider>
-      <TagContextProvider>
-        <App />
-      </TagContextProvider>
+      <BlogContextProvider>
+        <TagContextProvider>
+          <App />
+        </TagContextProvider>
+      </BlogContextProvider>
     </UserContextProvider>
   </React.StrictMode>
 );

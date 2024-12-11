@@ -9,7 +9,7 @@ export const UserContextProvider = (props) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
-  console.log(loading);
+
   useEffect(() => {
     const getUser = onAuthStateChanged(auth, (user) => {
       if (user) {

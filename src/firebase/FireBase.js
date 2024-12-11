@@ -27,7 +27,6 @@ export const signUpFunction = async (firstName, lastName, email, password) => {
       email,
       password
     );
-    console.log(userCredential);
     const user = userCredential.user;
 
     await updateProfile(user, {
